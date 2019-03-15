@@ -1,0 +1,35 @@
+.menu{
+    background: #a7a7a7;
+    float: left;
+    width: 200px;
+    height: 500px;
+    
+}
+
+.principal{
+    background: #a7a7a7;
+    float: left;
+    width: 800px;
+    padding-top: 10px;
+    padding-left: 25px;
+    height: 500px;
+    border-left: #FFF solid;
+    border-top: #FFF solid;
+}
+
+.topo{
+    background: #a7a7a7;
+    border: solid #a7a7a7;
+    
+}
+
+.menu a{
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+    padding: 5px;
+}
+
+.menu a:hover{
+    background: linear-gradient(135deg, #64757c 0%, #a0c4be 100%);
+}
