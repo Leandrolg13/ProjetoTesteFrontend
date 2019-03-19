@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 const URL = 'http://localhost:8080/clientes'
-const initialState = {
-    nome: '', cpf: '', sexo: ''
-}
 
 export default class Pagina extends Component{
     constructor(props) {
@@ -18,13 +15,13 @@ export default class Pagina extends Component{
     }
 
     save() {
-        const user = this.state
+        const { user } = this.state
         const method = user.id ? 'put' : 'post'
         const url = user.id ? `${URL}/${user.id}` : URL
         console.log(method, url, user)
         axios[method](url, user)
             .then(resp => {
-                this.setState( user , list)
+                this.setState( { user: resp.data.user , list: []})
             })
             .catch(e => console.log())    
         this.carregarLista()
@@ -33,7 +30,7 @@ export default class Pagina extends Component{
     updateField(event) {
         const dados = { ...this.state }
         dados[event.target.name] = event.target.value
-        this.setState(dados)
+        this.setState({dados})
         
     }
 
